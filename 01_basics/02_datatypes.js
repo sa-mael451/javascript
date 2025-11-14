@@ -8,3 +8,10 @@ let big = 12345678901234567890n; //bigint
 
 console.log (a, b, str, text, c, d, e, big);
 console.log( typeof (a), typeof str, typeof (c), typeof (d), typeof (e), typeof (big));
+
+// Now non-primitive datatypes
+const arr = ["dev", 12] // array
+let myObj = {
+    name: "Dev",
+    age: 20
+}
