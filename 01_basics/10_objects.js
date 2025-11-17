@@ -1,5 +1,26 @@
 let mySym = Symbol ("mySym1")
 
+let myObj = new Object ()
+console.log (myObj); // {}
+
+let myObj2 = {}
+console.log (myObj2); // {}
+
+myObj = {
+    a: 1,
+    b: 2
+}
+myObj2 = {
+    c: 3,
+    d: 4
+}
+
+let myObj3 = {myObj, myObj2}
+console.log (myObj3);
+// myObj3 = Object.assign (myObj, myObj2) // also modifies myObj
+myObj3 = {...myObj, ...myObj2}
+console.log (myObj3);
+
 let jsUser = {
     name: "Dev",
     "full name": "Dev Krishan",
@@ -25,6 +46,25 @@ jsUser.greeting = function () {
 }
 console.log (jsUser.greeting); // prints [Function (anonymous)]
 console.log (jsUser.greeting ());
+
+const regularUser = {
+    email: "some@gmail.com",
+    fullname: {
+        userfullname: {
+            firstname: "dev",
+            lastname: "krishan"
+        }
+    }
+}
+console.log(regularUser.fullname.userfullname.firstname);
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+const {courseInstructor: instructor} = course
+console.log(instructor);
 
 Object.freeze (jsUser) // data can not be manipulated now
 jsUser.email = "dev@iiitp.com"
